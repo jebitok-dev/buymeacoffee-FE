@@ -6,8 +6,7 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
-  // const contractAddress = "0x8e78BAA1A3CA7EFdF681872d2a4dC74E101a2125";
-  const contractAddress = "0x34d9297629323795CE29190159206cDD81e6B2d2";
+  const contractAddress = "0x8e78BAA1A3CA7EFdF681872d2a4dC74E101a2125";
   const contractABI = abi.abi
   const [currentAccount, setCurrentAccount] = useState("");
   const [name, setName] = useState("");
@@ -167,7 +166,7 @@ export default function Home() {
       <Head>
         <title>Buy Sharon a Coffee</title>
         <meta name='description' content='Tipping Site' />
-        <link rel='icon' href='/favicon.ico' />
+        <link rel='icon' href='/mobile-payment.ico' />
       </Head>
       <main className={styles.main}>
         <h1 className={styles.title}>Buy Sharon a Coffee!</h1>
