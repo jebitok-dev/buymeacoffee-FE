@@ -6,7 +6,8 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
-  const contractAddress = "0x8e78BAA1A3CA7EFdF681872d2a4dC74E101a2125";
+  // const contractAddress = "0x8e78BAA1A3CA7EFdF681872d2a4dC74E101a2125";
+  const contractAddress = "0x34d9297629323795CE29190159206cDD81e6B2d2";
   const contractABI = abi.abi
   const [currentAccount, setCurrentAccount] = useState("");
   const [name, setName] = useState("");
@@ -71,11 +72,11 @@ export default function Home() {
           signer
         );
 
-        console.log("buying coffee..")
+        console.log("buying coffee...")
         const coffeeTxn = await buyMeACoffee.buyCoffee(
-          name ? name : "anon",
-          message ? message : "Enjoy your coffee!",
-          {value: ethers.utils.parseEther("0.001")}
+          name ? name : "name",
+          message ? message : "Let us build on web3!",
+          {value: ethers.utils.parseEther("0.0001")}
         );
 
         await coffeeTxn.wait();
@@ -88,8 +89,8 @@ export default function Home() {
         setName("");
         setMessage("");
       }
-    } catch (error) {
-      console.log(error);
+    } catch (err) {
+      console.log(err);
     }
   };
 
@@ -114,8 +115,8 @@ export default function Home() {
         console.log("Metamask is not connected");
       }
       
-    } catch (error) {
-      console.log(error);
+    } catch (err) {
+      console.log(err);
     }
   };
   
@@ -171,7 +172,7 @@ export default function Home() {
       <main className={styles.main}>
         <h1 className={styles.title}>Buy Sharon a Coffee!</h1>
         {currentAccount ? (
-          <div>
+          <div className={styles.form}>
             <form>
               <div>
                 <label>Name</label>
@@ -189,25 +190,25 @@ export default function Home() {
                 <br />
                 <textarea
                   id='message'
-                  placeholder='Your Content is Amazing!'
+                  placeholder='Let us build on web3!'
                   rows='3'
                   onChange={onMessageChange}
                   required></textarea>
               </div>
               <div>
-                <button type='button' onClick={buyCoffee}>
-                  Send 1 for 0.0001ETH
+                <button className={styles.btn} type='button' onClick={buyCoffee}>
+                  Send 1 for 0.0001 ETH
                 </button>
               </div>
             </form>
           </div>
         ) : (
-          <button onClick={connectWallet}>Connect your Wallet</button>
+          <button className={styles.btn} onClick={connectWallet}>Connect your Wallet</button>
         )}
       </main>
       {currentAccount && <h1>Memos Received</h1>}
       {currentAccount &&
-        memos.map((memo, idx) => {
+        (memos.map((memo, idx) => {
           return (
             <div
               key={idx}
@@ -222,13 +223,13 @@ export default function Home() {
               </p>
             </div>
           );
-        })}
+        }))}
       <footer className={styles.footer}>
         <a
           href='https://github.com/jebitok-dev/'
           target='_blank'
           rel='noopener noreferrer'>
-          Created by @SharonJebitok cc thatguyintech for Alchemy's #RoadToWeb3!
+          Created by @SharonJebitok cc @thatguyintech for Alchemy's #RoadToWeb3!
         </a>
       </footer>
     </div>

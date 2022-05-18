@@ -5,6 +5,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #39FFD2;
 }
 
 .main {
@@ -14,6 +15,16 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.btn {
+  background-color: #FF8339;
+  border-color: #FF8339;
+  border-radius: 5px;
+  height: 40px;
+  width: 100%;
+  color: #fff;
+  font-weight: 600;
 }
 
 .footer {
@@ -44,7 +55,7 @@
 }
 
 .title {
-  margin: 0;
+  margin: 20;
   line-height: 1.15;
   font-size: 4rem;
 }
