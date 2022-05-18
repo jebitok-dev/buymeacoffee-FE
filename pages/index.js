@@ -140,7 +140,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Buy Sharon a Coffe</title>
+        <title>Buy Sharon a Coffee</title>
         <meta name='description' content='Tipping Site' />
         <Link rel='icon' href='/favicon.ico' />
       </Head>
